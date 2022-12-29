@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-hide: false
+hide: true
 description: Building the Web3 World Computer
 categories: [markdown]
 title: Ethereum as the Motherboard
@@ -43,7 +43,7 @@ Lastly, and perhaps most importantly, fully trustless intracluster communication
 
 **Full-Stack Decentralized Applications**
 
-Putting these things together creates a new development pattern that we are only just now scratching the surface of:
+Putting these things together creates a new development pattern that we are only just now scratching the surface of.
 
 Accessing Resources from within Smart Contracts
 8. Bridge constructions now make it possible to link EVM compute resources
