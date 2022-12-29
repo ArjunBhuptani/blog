@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-hide: true
+hide: false
 description: Building the Web3 World Computer
 categories: [markdown]
 title: Ethereum as the Motherboard
