@@ -3,7 +3,7 @@ toc: false
 layout: post
 hide: false
 description: A New Vision for the World Computer
-categories: [markdown]
+categories: 
 title: Ethereum as the Motherboard
 ---
 
@@ -59,7 +59,9 @@ Usecases:
 
 ## A New Vision for the World Computer
 
-12. Ethereum on its own is not the whole solution. We've known this is the case - this is why rollups exist!
-13. However, Ethereum is the substrate that provides base layer security + language for rollups to exist
-14. By extending this model to other types of resources beyond compute, we can build *full stack* decentralized applications.
+[Work in progress]
+
+1. Ethereum doesn't need to be the world computer by itself, it only needs to be the motherboard: the substrate that provides base layer security + settlement for other specialized execution environments
+2. The Ethereum motherboard connects compute environments (rollups, etc) to storage (filecoin, eventual storage rollups), data availability ledgers (eigenlayer, celestia, avail), and eventually other more specialized infrastructure networks
+3. Using systems like Connext (which act as a message bus), devs can build **full stack** decentralized applications, that asynchronously leverage resources from multiple domains simultaneously (just like normal web infrastructure!)
 
