@@ -6,7 +6,7 @@ import { defineConfig } from './src/helpers/config-helper';
 export default defineConfig({
   lang: 'en-US',
   site: 'https://undystopia.com',
-  avatar: '',
+  avatar: '/avatar.png',
   title: 'Undystopia',
   description: 'A blog by Arjun Bhuptani',
   lastModified: true,
