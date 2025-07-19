@@ -5,19 +5,23 @@ import { defineConfig } from './src/helpers/config-helper';
 
 export default defineConfig({
   lang: 'en-US',
-  site: 'https://slate-blog-demo.vercel.app',
+  site: 'https://undystopia.com',
   avatar: '/avatar.png',
-  title: 'Slate Blog',
-  description: 'Pure thoughts, simple stories.',
+  title: 'Undystopia',
+  description: 'A blog by Arjun Bhuptani',
   lastModified: true,
   readTime: true,
   footer: {
-    copyright: '© 2025 Slate Design',
+    copyright: '©̸ Ideas in this blog are shared freely. Use them to save the world.',
   },
   socialLinks: [
     {
       icon: 'github',
-      link: 'https://github.com/SlateDesign/slate-blog'
+      link: 'https://github.com/arjunbhuptani'
     },
+    {
+      icon: 'x',
+      link: 'https://x.com/arjunbhuptani'
+    }
 ]
 });
