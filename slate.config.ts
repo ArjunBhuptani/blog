@@ -6,13 +6,13 @@ import { defineConfig } from './src/helpers/config-helper';
 export default defineConfig({
   lang: 'en-US',
   site: 'https://undystopia.com',
-  avatar: '/avatar.png',
+  avatar: '',
   title: 'Undystopia',
   description: 'A blog by Arjun Bhuptani',
   lastModified: true,
   readTime: true,
   footer: {
-    copyright: '©̸ Ideas in this blog are shared freely. Use them to save the world.',
+    copyright: 'Ideas in this blog are shared freely. Go use them to help the world.',
   },
   socialLinks: [
     {
