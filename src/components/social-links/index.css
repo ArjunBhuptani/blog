@@ -1,0 +1,73 @@
+.sb-social-icon {
+  mask: var(--icon) no-repeat;
+  mask-size: 100% 100%;
+  @apply block h-full w-full bg-current fill-current text-inherit;
+
+  &.facebook {
+    --icon: url('../../assets/images/facebook.svg');
+  }
+
+  &.github {
+    --icon: url('../../assets/images/github.svg');
+  }
+
+  &.instagram {
+    --icon: url('../../assets/images/instagram.svg');
+  }
+
+  /* &.npm {
+    --icon: url('../../assets/images/github.svg');
+  }
+
+  &.jike {
+    --icon: url('../../assets/images/github.svg');
+  }
+
+  &.rednote {
+    --icon: url('../../assets/images/github.svg');
+  } */
+
+  &.threads {
+    --icon: url('../../assets/images/threads.svg');
+  }
+
+  /* &.stackoverflow {
+    --icon: url('../../assets/images/github.svg');
+  }
+
+  &.weibo {
+    --icon: url('../../assets/images/github.svg');
+  } */
+
+  &.x {
+    --icon: url('../../assets/images/x.svg');
+  }
+
+  &.youtube {
+    --icon: url('../../assets/images/youtube.svg');
+  }
+
+  &.dribbble {
+    --icon: url('../../assets/images/dribbble.svg');
+  }
+
+  &.notion {
+    --icon: url('../../assets/images/notion.svg');
+  }
+
+  &.link {
+    --icon: url('../../assets/images/link.svg');
+  }
+
+  &.figma {
+    --icon: url('../../assets/images/figma.svg');
+  }
+
+  &.rss {
+    --icon: url('../../assets/images/rss.svg');
+  }
+
+  &.mail {
+    --icon: url('../../assets/images/mail.svg');
+  }
+}

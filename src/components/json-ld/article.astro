@@ -1,0 +1,34 @@
+---
+import slateConfig from '~@/slate.config';
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  pubDate?: Date;
+  lastModified: Date;
+  author?: string;
+}
+const {
+  title,
+  description = slateConfig.description,
+  image = '/og_image.png',
+  pubDate,
+  lastModified,
+  author = 'slate',
+} = Astro.props;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description,
+  image: new URL(image, Astro.url),
+  datePublished: pubDate?.toISOString(),
+  dateModified: lastModified?.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: author,
+  },
+});
+---
+
+<script type="application/ld+json" set:html={jsonLd} />

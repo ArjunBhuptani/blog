@@ -1,0 +1,226 @@
+@reference "./common.css";
+
+.blog-content {
+  @apply mb-16;
+
+  h1 {
+    @apply text-slate12 mb-2 text-4xl leading-normal font-bold;
+  }
+  h2 {
+    @apply text-slate12 mt-8 mb-2 text-3xl leading-normal font-semibold;
+  }
+  h3 {
+    @apply text-slate12 my-2 text-2xl leading-normal font-semibold;
+  }
+
+  h4 {
+    @apply text-slate12 my-2 text-base leading-normal font-semibold;
+  }
+
+  p {
+    @apply text-slate12 my-6 mt-4 text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-indigo11 decoration-indigo6 underline-offset-4 transition-all hover:underline;
+  }
+
+  /* a::after{
+    @apply text-slate8 mx-0.5;
+    content: '↗';
+  } */
+
+  img {
+    @apply border-slate6 mx-auto my-8 w-full rounded-2xl border;
+  }
+
+  code {
+    @apply border-slate4 bg-slate3 text-slate11 mx-0.5 rounded-lg border p-0.5 px-1 text-base;
+  }
+
+  .code {
+    @apply text-wrap;
+  }
+
+  .katex-html {
+    @apply hidden;
+  }
+
+  .block-default {
+    @apply my-6 rounded-xl p-4;
+
+    p {
+      @apply text-slate12 my-0 text-base leading-relaxed;
+    }
+  }
+
+  .tip {
+    @apply border-indigo4 bg-indigo2 border;
+
+    .block-title {
+      @apply text-indigo11 text-lg font-semibold;
+    }
+  }
+
+  .warning {
+    @apply border-orange4 bg-orange2 border;
+
+    .block-title {
+      @apply text-orange11 text-lg font-semibold;
+    }
+  }
+
+  table {
+    @apply ring-slate4 my-6 w-full border-collapse overflow-hidden rounded-xl ring-1;
+
+    thead {
+      @apply border-slate4 bg-slate3 border-b text-left;
+    }
+
+    th,
+    td {
+      @apply border-slate4 border-b px-4 py-3;
+    }
+  }
+
+  blockquote {
+    @apply border-slate4 my-6 border-l-2 pl-4;
+
+    p {
+      @apply text-slate10 text-base leading-relaxed;
+    }
+  }
+
+  hr {
+    @apply border-slate4 mx-auto my-12 w-1/3;
+  }
+
+  ul {
+    @apply text-slate11 mt-2 mb-6 list-disc pl-4 text-base leading-relaxed;
+  }
+
+  .task-list-item {
+    @apply list-none;
+  }
+
+  ul li::marker {
+    @apply text-slate8;
+  }
+
+  ol {
+    @apply text-slate11 mt-2 mb-6 list-decimal pl-6 text-base leading-relaxed;
+  }
+
+  li {
+    @apply text-slate11 text-base leading-relaxed;
+  }
+
+  ol li::marker {
+    @apply text-slate8;
+  }
+
+  figcaption {
+    @apply text-slate8 -mt-4 text-center text-sm;
+  }
+
+  .expressive-code {
+    @apply mb-6;
+  }
+
+  heti-spacing {
+    @apply inline;
+  }
+
+  .heti-spacing-start {
+    @apply me-[0.25em];
+  }
+
+  .heti-spacing-end {
+    @apply ms-[0.25em];
+  }
+
+  heti-adjacent {
+    @apply inline;
+  }
+
+  .heti-adjacent-half {
+    @apply me-[-0.5em];
+  }
+
+  .heti-adjacent-quarter {
+    @apply me-[-0.25em];
+  }
+
+  /* 两张图片分栏 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(2)) {
+    column-count: 2;
+    column-gap: 8px;
+    @apply my-1.5;
+  }
+
+  /* 三张图片分栏 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(3)) {
+    column-count: 3;
+    column-gap: 8px;
+    @apply my-1.5;
+  }
+
+  /* 四张图片分栏 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(4)) {
+    column-count: 4;
+    column-gap: 8px;
+    @apply my-1.5;
+  }
+
+  /* 五张图片分栏 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(5)) {
+    column-count: 5;
+    column-gap: 8px;
+    @apply my-1.5;
+  }
+
+  /* 六张图片分栏 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(6)) {
+    column-count: 4;
+    column-gap: 8px;
+    @apply my-1.5;
+  }
+
+  /* 处理图片显示 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(2)) .rehype-figure,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(3)) .rehype-figure,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(4)) .rehype-figure,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(5)) .rehype-figure,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(6)) .rehype-figure {
+    @apply relative mb-2 break-inside-avoid;
+
+    figcaption {
+      @apply absolute overflow-hidden overflow-ellipsis max-w-[calc(100%-16px)] bottom-2 right-2 bg-black/50 rounded-lg px-2 py-1 text-white;
+    }
+  }
+
+  .rehype-figure-container:has(> .rehype-figure:nth-child(2)) img,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(3)) img,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(4)) img,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(5)) img,
+  .rehype-figure-container:has(> .rehype-figure:nth-child(6)) img {
+    @apply m-0 border-slate6 rounded-2xl border;
+  }
+
+  /* 针对6图模式调整间距 */
+  .rehype-figure-container:has(> .rehype-figure:nth-child(6)) .rehype-figure {
+    @apply mb-2;
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .rehype-figure-container:has(> .rehype-figure:nth-child(2)),
+    .rehype-figure-container:has(> .rehype-figure:nth-child(3)),
+    .rehype-figure-container:has(> .rehype-figure:nth-child(4)),
+    .rehype-figure-container:has(> .rehype-figure:nth-child(5)),
+    .rehype-figure-container:has(> .rehype-figure:nth-child(6)) {
+      column-count: 1;
+      column-gap: 0;
+    }
+  }
+}

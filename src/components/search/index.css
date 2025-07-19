@@ -1,0 +1,27 @@
+@reference '../../assets/style/common.css';
+
+.DocSearch-Button {
+  --docsearch-searchbox-background: var(--color-slate3);
+  --docsearch-searchbox-focus-background: var(--color-slate4);
+  --docsearch-muted-color: var(--color-slate10);
+  --docsearch-searchbox-shadow: none;
+  @apply flex items-center m-0 h-10 transition-all duration-200;
+  padding: 0 16px;
+
+  .DocSearch-Button-Placeholder {
+    @apply hidden;
+  }
+
+  .DocSearch-Search-Icon {
+    @apply h-4 text-slate10;
+  }
+
+  .DocSearch-Button-Keys {
+    @apply min-w-auto ml-2;
+  }
+
+  .DocSearch-Button-Key {
+    @apply top-0 mr-0 shadow-none first-of-type:pt-px first-of-type:text-xl first-of-type:after:content-['+'] first-of-type:after:relative first-of-type:after:top-[-1px] first-of-type:after:left-0.5 first-of-type:after:text-base;
+    background: transparent;
+  }
+}

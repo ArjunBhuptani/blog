@@ -1,0 +1,23 @@
+---
+import stateConfig from '~@/slate.config';
+import type { ThemeOptions } from '@/typings/config';
+import ThemeSelect from '@/components/theme-select';
+import SocialLinks from '@/components/social-links';
+import slateConfig from '~@/slate.config';
+
+interface Props {
+  copyright?: string;
+}
+
+const { copyright = stateConfig.footer?.copyright } = Astro.props;
+---
+
+<footer class="mt-auto">
+  {!!slateConfig.socialLinks && <SocialLinks client:visible />}
+  <div class="mt-4 flex items-center justify-between">
+    <div class="text-slate8 text-sm">{copyright}</div>
+    {/* S theme selection */}
+    {(stateConfig.theme as ThemeOptions).enableUserChange && <ThemeSelect client:visible />}
+    {/* E theme selection */}
+  </div>
+</footer>

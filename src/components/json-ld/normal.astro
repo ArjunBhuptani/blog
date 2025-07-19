@@ -1,0 +1,22 @@
+---
+import slateConfig from '~@/slate.config';
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+const {
+  title,
+  description = slateConfig.description,
+  image = '/og_image.png',
+} = Astro.props;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description: description,
+  image: new URL(image, Astro.url),
+});
+---
+
+<script type="application/ld+json" set:html={jsonLd} />

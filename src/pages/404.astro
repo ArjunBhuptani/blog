@@ -1,0 +1,20 @@
+---
+import i18next from '@/i18n';
+import PageLayout from '@/components/layouts/PageLayout.astro';
+import Button from '@/components/button';
+---
+
+<PageLayout title="404">
+  <div class="flex h-[70vh] flex-col items-center justify-center">
+    <h1 class="mb-4 text-4xl font-bold">404</h1>
+    <p class="mb-8 text-slate10 text-base">{i18next.t('404.pageText')}</p>
+    <Button id="back">{i18next.t('404.backBtnText')}</Button>
+  </div>
+</PageLayout>
+
+<script>
+  const backBtn = document.getElementById('back');
+  backBtn?.addEventListener('click', () => {
+    window.location.href = '/';
+  });
+</script>

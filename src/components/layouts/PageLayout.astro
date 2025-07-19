@@ -1,0 +1,63 @@
+---
+import HeadMeta from './HeadMeta.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import NormalJsonLd from '@/components/json-ld/normal.astro';
+import slateConfig from '~@/slate.config';
+import { getFullTitle } from '@/helpers/utils';
+import '@/assets/style/common.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = '',
+  description = slateConfig.description,
+  image = '/og_image.png',
+} = Astro.props;
+const fullTitle = getFullTitle(title);
+
+// remark: Temporary solution to refresh theme flicker issue
+const themeScript = `
+  function getThemeMode() {
+    const theme = localStorage.getItem('theme');
+    if (theme && (theme === 'light' || theme === 'dark')) return theme;
+
+    const presetTheme = theme === 'auto' ? theme : '${slateConfig.theme?.mode}';
+    if (presetTheme === 'auto')
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+
+    return presetTheme;
+  }
+  const mode = getThemeMode();
+  document.documentElement.className = mode;
+  document.documentElement.dataset.theme = mode;
+`;
+---
+
+<!doctype html>
+<html lang={slateConfig.lang}>
+  <head>
+    <HeadMeta title={fullTitle} description={description} image={image} />
+    <slot name="json-ld">
+      <NormalJsonLd title={fullTitle} description={description} image={image} />
+    </slot>
+    <script set:html={themeScript}></script>
+  </head>
+  <body class="bg-slate1">
+    <div class="m-auto flex min-h-dvh max-w-180 flex-col px-6 pb-6 pt-18">
+      <slot name="header">
+        <Header />
+      </slot>
+      <slot />
+      <slot name="footer">
+        <Footer />
+      </slot>
+    </div>
+  </body>
+</html>
